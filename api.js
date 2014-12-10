@@ -6,11 +6,12 @@ var pins = [11, 15, 16, 13];
 var actions = [];
 var power = (argv.power?true:false);
 
+console.log(power);
 
 for (var p in pins) {
 
   (function(pin, power) {
-
+    console.log(pin, power);
     actions.push(function(callback) {
 
       gpio.setup(pin, gpio.DIR_OUT, function(err) {
