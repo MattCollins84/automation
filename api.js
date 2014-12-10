@@ -28,6 +28,7 @@ for (var p in pins) {
 
 async.parallel(actions, function(err, results) {
 
+  console.log(err);
   console.log("done!");
 
 });
