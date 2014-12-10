@@ -18,6 +18,7 @@
   "homepage": "https://github.com/MattCollins84/automation",
   "dependencies": {
     "rpi-gpio": "*",
-    "async": "*"
+    "async": "*",
+    "optimist": "*"
   }
 }
