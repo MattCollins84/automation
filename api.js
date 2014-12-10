@@ -19,7 +19,13 @@ for (var p in pins) {
         }
 
         gpio.write(pin, power, function(err) {
-          return callback({ "action": "write", err: err, pin: pin, power: power}, null);
+          
+          if (err) {
+            return callback({ "action": "write", err: err, pin: pin, power: power}, null);
+          }
+
+          return callback();
+          
         });
 
       });
