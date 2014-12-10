@@ -1,0 +1,24 @@
+{
+  "name": "automation",
+  "version": "1.0.0",
+  "description": "automation ==========",
+  "main": "api.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MattCollins84/automation.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MattCollins84/automation/issues"
+  },
+  "homepage": "https://github.com/MattCollins84/automation",
+  "dependencies": {
+    "rpi-gpio": "*",
+    "async": "*",
+    "js-api": "git+ssh://git@github.com:touchlocal/js-api.git"
+  }
+}
