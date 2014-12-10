@@ -6,18 +6,22 @@ var pins = [11, 15, 16, 13];
 var actions = [];
 var power = (argv.power?true:false);
 
-console.log(power);
-
 for (var p in pins) {
 
   (function(pin, power) {
-    console.log(pin, power);
+
     actions.push(function(callback) {
 
       gpio.setup(pin, gpio.DIR_OUT, function(err) {
-        gpio.write(pin, power, function() {
-          return callback(err, null);
+        
+        if (err) {
+          return callback({ "action": "setup", err: err, pin: pin, power: power});
+        }
+
+        gpio.write(pin, power, function(err) {
+          return callback({ "action": "write", err: err, pin: pin, power: power}, null);
         });
+
       });
 
     });
@@ -29,6 +33,5 @@ for (var p in pins) {
 async.parallel(actions, function(err, results) {
 
   console.log(err);
-  console.log("done!");
 
 });
