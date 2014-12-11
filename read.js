@@ -12,5 +12,6 @@ if (!pin) {
 gpio.setup(pin, gpio.DIR_IN, function(err) {
   gpio.read(pin, function(err, data) {
     console.log(err, data);
+    process.exit(0);
   });
 });

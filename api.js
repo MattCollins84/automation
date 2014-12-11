@@ -6,7 +6,7 @@ var argv = require('optimist').argv
 
 var pins = [11, 15, 16, 13];
 var actions = [];
-var power = (argv.power?true:false);
+var power = true; // (argv.power?true:false);
 
 for (var p in pins) {
 
@@ -38,12 +38,14 @@ for (var p in pins) {
 
 }
 
-async.parallel(actions, function(err, results) {
+async.series(actions, function(err, results) {
 
   if (err) {
     return console.log(err);
+    process.exit(0);
   }
 
   console.log(results);
+  process.exit(0);
 
 });
