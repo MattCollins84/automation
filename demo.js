@@ -4,7 +4,7 @@ var gpio = require('rpi-gpio');
 var async = require('async');
 var argv = require('optimist').argv
 
-var pins = [11, 15, 16, 13];
+var pins = [11, 15, 16, 13, 22, 18];
 var actions = {};
 var power = true; // (argv.power?true:false);
 
@@ -47,11 +47,15 @@ async.series(actions, function(err, results) {
 
   for (var r in results) {
 
+    if (r == 18) {
+      continue;
+    }
+
     (function(pin) {
 
       writes[pin] = function(callback) {
         
-        delayedWrite(pin, true, function(err, data) {
+        delayedWrite(pin, false, function(err, data) {
           return callback(err, data);
         });
 
