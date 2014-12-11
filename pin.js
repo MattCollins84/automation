@@ -16,17 +16,16 @@ function delayedWrite(pin, value, callback) {
 gpio.setup(pin, gpio.DIR_OUT, function(err) {
         
   if (err) {
-    return callback({ "action": "setup", err: err, pin: pin, power: power});
+    return console.log({ "action": "setup", err: err, pin: pin, power: power});
   }
 
   delayedWrite(pin, power, function(err) {
     
     if (err) {
-      return callback({ "action": "write", err: err, pin: pin, power: power}, null);
+      return console.log({ "action": "write", err: err, pin: pin, power: power}, null);
     }
 
-    console.log("DONE");
-    
+    return console.log("DONE");
   });
 
 });
