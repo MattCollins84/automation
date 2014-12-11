@@ -55,7 +55,7 @@ for (var p in pins) {
 async.series(actions, function(err, results) {
 
   if (err) {
-    return console.log(err);
+    console.log(err);
     process.exit(0);
   }
 
