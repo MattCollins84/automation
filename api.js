@@ -4,7 +4,7 @@ gpio.setMode(gpio.MODE_BCM);
 var async = require('async');
 var argv = require('optimist').argv
 
-var pins = [11, 15, 16, 13];
+var pins = [11, 15, 13];
 var actions = [];
 var power = true; // (argv.power?true:false);
 
