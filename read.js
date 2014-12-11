@@ -9,9 +9,16 @@ if (!pin) {
   process.exit(0);
 }
 
-gpio.setup(pin, gpio.DIR_IN, function(err) {
-  gpio.read(pin, function(err, data) {
-    console.log(err, data);
-    process.exit(0);
+gpio.setup(pin, gpio.DIR_OUT, function(err) {
+  console.log('setup out', err)
+  gpio.write(pin, true, function(err, data) {
+    console.log('write', err, data);
+    gpio.setup(pin, gpio.DIR_IN, function(err) {
+      console.log('setup in', err)
+      gpio.read(pin, function(err, data) {
+        console.log('read', err, data);
+        process.exit(0);
+      });
+    });
   });
 });
