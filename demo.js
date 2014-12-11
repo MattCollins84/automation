@@ -55,7 +55,7 @@ async.series(actions, function(err, results) {
           return callback(err, data);
         });
 
-      });
+      }
 
     })(r);
 
