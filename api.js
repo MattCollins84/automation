@@ -4,9 +4,15 @@ gpio.setMode(gpio.MODE_BCM);
 var async = require('async');
 var argv = require('optimist').argv
 
-var pins = [11, 15, 13];
+var pins = [11, 15, 16, 13];
 var actions = [];
 var power = true; // (argv.power?true:false);
+
+function delayedWrite(pin, value, callback) {
+    setTimeout(function() {
+        gpio.write(pin, value, callback);
+    }, 500);
+}
 
 for (var p in pins) {
 
@@ -20,15 +26,23 @@ for (var p in pins) {
           return callback({ "action": "setup", err: err, pin: pin, power: power});
         }
 
-        gpio.write(pin, power, function(err) {
-          
+        delayedWrite(pin, power, function(err) {
           if (err) {
             return callback({ "action": "write", err: err, pin: pin, power: power}, null);
           }
 
           return callback();
-          
         });
+
+        // gpio.write(pin, power, function(err) {
+          
+        //   if (err) {
+        //     return callback({ "action": "write", err: err, pin: pin, power: power}, null);
+        //   }
+
+        //   return callback();
+          
+        // });
 
       });
 
