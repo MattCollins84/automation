@@ -20,21 +20,13 @@ gpio.setup(pin, gpio.DIR_OUT, function(err) {
   }
 
   delayedWrite(pin, power, function(err) {
+    
     if (err) {
       return callback({ "action": "write", err: err, pin: pin, power: power}, null);
     }
 
-    return callback();
+    console.log("DONE");
+    
   });
-
-  // gpio.write(pin, power, function(err) {
-    
-  //   if (err) {
-  //     return callback({ "action": "write", err: err, pin: pin, power: power}, null);
-  //   }
-
-  //   return callback();
-    
-  // });
 
 });
