@@ -8,7 +8,7 @@ var pins = [11, 15, 16, 13];
 var actions = {};
 var power = true; // (argv.power?true:false);
 
-function delayedWrite(pin, value, callback) {
+var delayedWrite = function(pin, value, callback) {
     setTimeout(function() {
         gpio.write(pin, value, callback);
     }, 500);
@@ -49,10 +49,20 @@ async.series(actions, function(err, results) {
 
     (function(pin) {
 
-      console.log(pin);
+      writes[pin] = delayedWrite(pin, true, callback(err, data) {
+
+        return callback(err, data);
+
+      });
 
     })(r)
 
   }
+
+  async.series(writes, function(err2, results2) {
+
+    console.log(err2, results2);
+
+  });
 
 });
