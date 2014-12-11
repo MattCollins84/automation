@@ -49,9 +49,11 @@ async.series(actions, function(err, results) {
 
     (function(pin) {
 
-      writes[pin] = delayedWrite(pin, true, function(err, data) {
-
-        return callback(err, data);
+      writes[pin] = function(callback) {
+        
+        delayedWrite(pin, true, function(err, data) {
+          return callback(err, data);
+        });
 
       });
 
