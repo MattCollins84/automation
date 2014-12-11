@@ -19,6 +19,7 @@
   "dependencies": {
     "js-api": "git+ssh://git@github.com:touchlocal/js-api.git",
     "rpi-gpio": "*",
+    "pi-gpio": "*",
     "async": "*",
     "optimist": "*"
   }
