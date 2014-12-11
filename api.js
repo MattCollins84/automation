@@ -1,4 +1,6 @@
 var gpio = require('rpi-gpio');
+gpio.setMode("MODE_BCM");
+
 var async = require('async');
 var argv = require('optimist').argv
 
@@ -38,6 +40,10 @@ for (var p in pins) {
 
 async.parallel(actions, function(err, results) {
 
-  console.log(err);
+  if (err) {
+    return console.log(err);
+  }
+
+  console.log(results);
 
 });

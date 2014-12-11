@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/MattCollins84/automation",
   "dependencies": {
+    "js-api": "git+ssh://git@github.com:touchlocal/js-api.git",
     "rpi-gpio": "*",
     "async": "*",
     "optimist": "*"
