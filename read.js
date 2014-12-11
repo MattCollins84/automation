@@ -1,4 +1,6 @@
 var gpio = require('rpi-gpio');
+gpio.setMode(gpio.MODE_BCM);
+
 var async = require('async');
 var argv = require('optimist').argv
 
