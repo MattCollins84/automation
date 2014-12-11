@@ -43,7 +43,16 @@ async.series(actions, function(err, results) {
     process.exit(0);
   }
 
-  console.log(results);
-  process.exit(0);
+  var writes = {}
+
+  for (var r in results) {
+
+    (function(pin) {
+
+      console.log(pin);
+
+    })(r)
+
+  }
 
 });
