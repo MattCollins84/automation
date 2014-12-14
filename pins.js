@@ -54,7 +54,7 @@ var write = function(pins, callback) {
 
     if (err) { return callback(err); }
 
-    return callback(null, data);
+    return callback(null, results);
 
   })
 
@@ -94,7 +94,7 @@ var read = function(pins, callback) {
 
     if (err) { return callback(err); }
 
-    return callback(null, data);
+    return callback(null, results);
 
   })
 
