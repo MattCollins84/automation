@@ -40,11 +40,13 @@ gpio.open(16, "input", function(err) {
 
               console.log("setDirection", err);
 
-              gpio.read(16, function(err, value) {
+              gpio.read(16, function(err, value2) {
 
-                console.log("read", value);
+                console.log("read", value2);
 
-                gpio.close(16);
+                gpio.close(16, function(err) {
+                  console.log("done", err)
+                });
 
               });
 
