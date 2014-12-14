@@ -1,4 +1,5 @@
 var gpio = require("pi-gpio");
+var fs = require('fs');
 
 gpio.open(16, "input", function(err) {
   
