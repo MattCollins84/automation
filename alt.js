@@ -12,15 +12,15 @@ var pin = argv.pin;
 //   });
 // });
 
-gpio.open(16, "output", function(err) {
+gpio.open(16, "input", function(err) {
   
   gpio.getDirection(16, function(err, direction) {
     
     console.log(16, direction);
 
-    gpio.write(16, "1", function(err) {
+    //gpio.write(16, "1", function(err) {
       
-      console.log(16, err);
+      //console.log(16, err);
 
       gpio.read(16, function(err, value) {
         
@@ -30,7 +30,7 @@ gpio.open(16, "output", function(err) {
 
       });
 
-    });
+    //});
 
   });
 
