@@ -1,16 +1,4 @@
 var gpio = require("pi-gpio");
-var argv = require('optimist').argv
-
-var pin = argv.pin;
-
-// gpio.open(pin, "input", function(err) {     // Open pin 16 for input
-//   gpio.read(pin, function(err, value) {
-//     console.log(err, value)
-//     gpio.close(pin, function(err) {
-//       console.log('done');
-//     });
-//   });
-// });
 
 gpio.open(16, "input", function(err) {
   
@@ -34,7 +22,7 @@ gpio.open(16, "input", function(err) {
 
           gpio.write(16, new_value, function(err) {
 
-            console.log("write", err);
+            console.log("write "+new_value, err);
 
             gpio.setDirection(16, "input", function(err) {
 
@@ -54,9 +42,7 @@ gpio.open(16, "input", function(err) {
 
           });
 
-        })
-
-
+        });
 
       });
 
