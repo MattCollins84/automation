@@ -1,0 +1,173 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', 'wiring-pi' ]
+2 info using npm@2.1.11
+3 info using node@v0.10.29
+4 silly cache add args [ 'wiring-pi', null ]
+5 verbose cache add spec wiring-pi
+6 silly cache add parsed spec { raw: 'wiring-pi',
+6 silly cache add   scope: null,
+6 silly cache add   name: 'wiring-pi',
+6 silly cache add   rawSpec: '',
+6 silly cache add   spec: '*',
+6 silly cache add   type: 'range' }
+7 verbose addNamed wiring-pi@*
+8 silly addNamed semver.valid null
+9 silly addNamed semver.validRange *
+10 silly addNameRange { name: 'wiring-pi', range: '*', hasData: false }
+11 silly mapToRegistry name wiring-pi
+12 silly mapToRegistry using default registry
+13 silly mapToRegistry registry https://registry.npmjs.org/
+14 silly mapToRegistry uri https://registry.npmjs.org/wiring-pi
+15 verbose addNameRange registry:https://registry.npmjs.org/wiring-pi not in flight; fetching
+16 verbose request uri https://registry.npmjs.org/wiring-pi
+17 verbose request no auth needed
+18 info attempt registry request try #1 at 16:39:51
+19 verbose request id 656581376e6c8cc2
+20 http request GET https://registry.npmjs.org/wiring-pi
+21 http 200 https://registry.npmjs.org/wiring-pi
+22 silly get cb [ 200,
+22 silly get   { date: 'Sun, 14 Dec 2014 16:39:53 GMT',
+22 silly get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+22 silly get     etag: '"MTL7FJ4CELQUGPCG3XCNK520"',
+22 silly get     'content-type': 'application/json',
+22 silly get     'cache-control': 'max-age=60',
+22 silly get     'content-length': '21776',
+22 silly get     'accept-ranges': 'bytes',
+22 silly get     via: '1.1 varnish',
+22 silly get     age: '0',
+22 silly get     'x-served-by': 'cache-fra1244-FRA',
+22 silly get     'x-cache': 'MISS',
+22 silly get     'x-cache-hits': '0',
+22 silly get     'x-timer': 'S1418575192.179419,VS0,VE891',
+22 silly get     vary: 'Accept',
+22 silly get     'keep-alive': 'timeout=10, max=50',
+22 silly get     connection: 'Keep-Alive' } ]
+23 silly addNameRange number 2 { name: 'wiring-pi', range: '*', hasData: true }
+24 silly addNameRange versions [ 'wiring-pi',
+24 silly addNameRange   [ '0.1.0',
+24 silly addNameRange     '0.1.1',
+24 silly addNameRange     '0.1.2',
+24 silly addNameRange     '0.2.0',
+24 silly addNameRange     '1.0.0',
+24 silly addNameRange     '1.0.1',
+24 silly addNameRange     '1.0.2',
+24 silly addNameRange     '1.1.0',
+24 silly addNameRange     '1.1.1',
+24 silly addNameRange     '1.1.2' ] ]
+25 verbose addNamed wiring-pi@1.1.2
+26 silly addNamed semver.valid 1.1.2
+27 silly addNamed semver.validRange 1.1.2
+28 silly mapToRegistry name wiring-pi
+29 silly mapToRegistry using default registry
+30 silly mapToRegistry registry https://registry.npmjs.org/
+31 silly mapToRegistry uri https://registry.npmjs.org/wiring-pi
+32 verbose addRemoteTarball https://registry.npmjs.org/wiring-pi/-/wiring-pi-1.1.2.tgz not in flight; adding
+33 verbose addRemoteTarball [ 'https://registry.npmjs.org/wiring-pi/-/wiring-pi-1.1.2.tgz',
+33 verbose addRemoteTarball   'bba07833c14fc0c4384dfcfd0f0ebfce6a4f78a3' ]
+34 info retry fetch attempt 1 at 16:39:53
+35 info attempt registry request try #1 at 16:39:53
+36 http fetch GET https://registry.npmjs.org/wiring-pi/-/wiring-pi-1.1.2.tgz
+37 http fetch 200 https://registry.npmjs.org/wiring-pi/-/wiring-pi-1.1.2.tgz
+38 silly fetchAndShaCheck shasum bba07833c14fc0c4384dfcfd0f0ebfce6a4f78a3
+39 verbose addTmpTarball /var/folders/hs/z__tq1jn1dq_y9mmwqps712r0000gn/T/npm-21908-5a3ab439/registry.npmjs.org/wiring-pi/-/wiring-pi-1.1.2.tgz not in flight; adding
+40 verbose addTmpTarball already have metadata; skipping unpack for wiring-pi@1.1.2
+41 silly cache afterAdd wiring-pi@1.1.2
+42 verbose afterAdd /Users/mattcollins/.npm/wiring-pi/1.1.2/package/package.json not in flight; writing
+43 verbose afterAdd /Users/mattcollins/.npm/wiring-pi/1.1.2/package/package.json written
+44 silly install resolved [ { name: 'wiring-pi',
+44 silly install resolved     version: '1.1.2',
+44 silly install resolved     description: 'Bindings to wiringPi',
+44 silly install resolved     main: 'lib/exports.js',
+44 silly install resolved     scripts:
+44 silly install resolved      { test: 'echo "Error: no test specified" && exit 1',
+44 silly install resolved        install: '/bin/bash ./install.sh' },
+44 silly install resolved     repository: { type: 'git', url: 'git@github.com:eugeneware/wiring-pi.git' },
+44 silly install resolved     keywords: [ 'wiringPi', 'gpio', 'raspberry', 'pi', 'raspberrypi', 'bcm2835' ],
+44 silly install resolved     author: { name: 'Igor Soarez', email: 'igorsoarez@gmail.com' },
+44 silly install resolved     contributors: [ [Object] ],
+44 silly install resolved     license: 'BSD',
+44 silly install resolved     bugs: { url: 'https://github.com/eugeneware/wiring-pi/issues' },
+44 silly install resolved     homepage: 'https://github.com/eugeneware/wiring-pi',
+44 silly install resolved     _id: 'wiring-pi@1.1.2',
+44 silly install resolved     dist:
+44 silly install resolved      { shasum: 'bba07833c14fc0c4384dfcfd0f0ebfce6a4f78a3',
+44 silly install resolved        tarball: 'http://registry.npmjs.org/wiring-pi/-/wiring-pi-1.1.2.tgz' },
+44 silly install resolved     _from: 'wiring-pi@*',
+44 silly install resolved     _npmVersion: '1.4.3',
+44 silly install resolved     _npmUser: { name: 'eugeneware', email: 'eugene@noblesamurai.com' },
+44 silly install resolved     maintainers: [ [Object], [Object], [Object] ],
+44 silly install resolved     directories: {},
+44 silly install resolved     _shasum: 'bba07833c14fc0c4384dfcfd0f0ebfce6a4f78a3',
+44 silly install resolved     _resolved: 'https://registry.npmjs.org/wiring-pi/-/wiring-pi-1.1.2.tgz' } ]
+45 info install wiring-pi@1.1.2 into /Users/mattcollins/projects/automation
+46 info installOne wiring-pi@1.1.2
+47 verbose installOne of wiring-pi to /Users/mattcollins/projects/automation not in flight; installing
+48 verbose lock using /Users/mattcollins/.npm/_locks/wiring-pi-575faba9bbc50c26.lock for /Users/mattcollins/projects/automation/node_modules/wiring-pi
+49 silly install write writing wiring-pi 1.1.2 to /Users/mattcollins/projects/automation/node_modules/wiring-pi
+50 silly cache addNamed cb wiring-pi@1.1.2
+51 verbose unbuild node_modules/wiring-pi
+52 verbose gentlyRm vacuuming /Users/mattcollins/projects/automation/node_modules/wiring-pi
+53 verbose tar unpack /Users/mattcollins/.npm/wiring-pi/1.1.2/package.tgz
+54 verbose tar unpacking to /Users/mattcollins/projects/automation/node_modules/wiring-pi
+55 verbose gentlyRm vacuuming /Users/mattcollins/projects/automation/node_modules/wiring-pi
+56 silly gunzTarPerm modes [ '755', '644' ]
+57 silly gunzTarPerm extractEntry package.json
+58 silly gunzTarPerm extractEntry .npmignore
+59 silly gunzTarPerm extractEntry README.md
+60 silly gunzTarPerm extractEntry CONTRIBUTING.md
+61 silly gunzTarPerm extractEntry binding.gyp
+62 silly gunzTarPerm extractEntry examples/blink.js
+63 silly gunzTarPerm extractEntry examples/pwm.js
+64 silly gunzTarPerm extractEntry install.sh
+65 silly gunzTarPerm extractEntry lib/exports.js
+66 silly gunzTarPerm extractEntry src/bindings.cc
+67 info preinstall wiring-pi@1.1.2
+68 silly install resolved []
+69 verbose about to build /Users/mattcollins/projects/automation/node_modules/wiring-pi
+70 info build /Users/mattcollins/projects/automation/node_modules/wiring-pi
+71 verbose linkStuff [ false,
+71 verbose linkStuff   false,
+71 verbose linkStuff   false,
+71 verbose linkStuff   '/Users/mattcollins/projects/automation/node_modules' ]
+72 info linkStuff wiring-pi@1.1.2
+73 verbose linkBins wiring-pi@1.1.2
+74 verbose linkMans wiring-pi@1.1.2
+75 verbose rebuildBundles wiring-pi@1.1.2
+76 info install wiring-pi@1.1.2
+77 verbose unsafe-perm in lifecycle true
+78 info wiring-pi@1.1.2 Failed to exec install script
+79 verbose unlock done using /Users/mattcollins/.npm/_locks/wiring-pi-575faba9bbc50c26.lock for /Users/mattcollins/projects/automation/node_modules/wiring-pi
+80 verbose stack Error: wiring-pi@1.1.2 install: `/bin/bash ./install.sh`
+80 verbose stack Exit status 1
+80 verbose stack     at EventEmitter.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/lifecycle.js:212:16)
+80 verbose stack     at EventEmitter.emit (events.js:98:17)
+80 verbose stack     at ChildProcess.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/spawn.js:14:12)
+80 verbose stack     at ChildProcess.emit (events.js:98:17)
+80 verbose stack     at maybeClose (child_process.js:755:16)
+80 verbose stack     at Process.ChildProcess._handle.onexit (child_process.js:822:5)
+81 verbose pkgid wiring-pi@1.1.2
+82 verbose cwd /Users/mattcollins/projects/automation
+83 error Darwin 13.4.0
+84 error argv "node" "/usr/local/bin/npm" "install" "wiring-pi"
+85 error node v0.10.29
+86 error npm  v2.1.11
+87 error code ELIFECYCLE
+88 error wiring-pi@1.1.2 install: `/bin/bash ./install.sh`
+88 error Exit status 1
+89 error Failed at the wiring-pi@1.1.2 install script '/bin/bash ./install.sh'.
+89 error This is most likely a problem with the wiring-pi package,
+89 error not with npm itself.
+89 error Tell the author that this fails on your system:
+89 error     /bin/bash ./install.sh
+89 error You can get their info via:
+89 error     npm owner ls wiring-pi
+89 error There is likely additional logging output above.
+90 verbose exit [ 1, true ]
+91 verbose unbuild node_modules/wiring-pi
+92 info preuninstall wiring-pi@1.1.2
+93 info uninstall wiring-pi@1.1.2
+94 verbose unbuild rmStuff wiring-pi@1.1.2 from /Users/mattcollins/projects/automation/node_modules
+95 info postuninstall wiring-pi@1.1.2
+96 verbose gentlyRm vacuuming /Users/mattcollins/projects/automation/node_modules/wiring-pi
+97 silly gentlyRm purging /Users/mattcollins/projects/automation/node_modules/wiring-pi
+98 silly gentlyRm quitting because other entries in /Users/mattcollins/projects/automation/node_modules

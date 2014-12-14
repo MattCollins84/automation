@@ -21,6 +21,7 @@
     "rpi-gpio": "*",
     "pi-gpio": "*",
     "async": "*",
-    "optimist": "*"
+    "optimist": "*",
+    "wiring-pi": "*"
   }
 }
