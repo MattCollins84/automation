@@ -1,6 +1,6 @@
 var wpi = require('wiring-pi');
 
-wpi.wiringPiSetupGpio();
+wpi.wiringPiSetupPhys();
 
 // read the value
 wpi.pinMode(16, wpi.modes.INPUT);
