@@ -19,7 +19,7 @@ var write = function(pins, callback) {
     (function(pin) {
 
       if (!pin.pin) {
-        continue;
+        return;
       }
 
       if (typeof pin.value == "undefined") {
