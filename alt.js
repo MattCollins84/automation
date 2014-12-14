@@ -24,6 +24,10 @@ gpio.open(16, "input", function(err) {
 
             console.log("write "+new_value, err);
 
+            var x = fs.readFileSync("/sys/devices/virtual/gpio/gpio23/value", "utf8");
+
+            console.log("from file", x);
+
             gpio.setDirection(16, "input", function(err) {
 
               console.log("setDirection", err);
