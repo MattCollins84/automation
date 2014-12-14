@@ -28,7 +28,7 @@ gpio.open(16, "input", function(err) {
 
           console.log("setDirection", err);
 
-          gpio.write(16, "1", function(err) {
+          gpio.write(16, "0", function(err) {
 
             console.log("write", err);
 
