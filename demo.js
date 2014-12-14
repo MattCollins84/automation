@@ -1,46 +1,46 @@
-var pins = require('./pins.js');
+var wpi = require('wiring-pi');
+var sleep = require('sleep').usleep;
 
-var async = require('async');
-var argv = require('optimist').argv
+wpi.wiringPiSetup();
 
-// var pins = [11, 15, 16, 13, 22, 18];
+// Select the GPIO pins used for the encoder K0-K3 data inputs
+wpi.pinMode(11, wpi.modes.OUTPUT)
+wpi.pinMode(15, wpi.modes.OUTPUT)
+wpi.pinMode(16, wpi.modes.OUTPUT)
+wpi.pinMode(13, wpi.modes.OUTPUT)
 
-var actions = {
+// Select the signal to select ASK/FSK
+wpi.pinMode(18, wpi.modes.OUTPUT)
 
-  write: function(callback) {
+// Select the signal used to enable/disable the modulator
+wpi.pinMode(22, wpi.modes.OUTPUT)
 
-    var opts = [
-      {
-        pin: 11,
-        value: true
-      }
-    ]
+// Disable the modulator by setting CE pin lo
+wpi.digitalWrite(22, 0)
 
-    pins.write(opts, function(err, data) {
-      return callback(err, data);
-    });
+// Set the modulator to ASK for On Off Keying 
+// by setting MODSEL pin lo
+wpi.digitalWrite(18, 0)
 
-  },
+// Initialise K0-K3 inputs of the encoder to 0000
+wpi.digitalWrite(11, 0)
+wpi.digitalWrite(15, 0)
+wpi.digitalWrite(16, 0)
+wpi.digitalWrite(13, 0)
 
-  read: function(callback) {
+wpi.digitalWrite(11, 1)
+wpi.digitalWrite(15, 1)
+wpi.digitalWrite(16, 1)
+wpi.digitalWrite(13, 1)
 
-    var opts = [11];
+// let it settle, encoder requires this
+sleep(100000);
 
-    pins.read(opts, function(err, data) {
-      return callback(err, data);
-    });
+// Enable the modulator
+wpi.digitalWrite(22, 1)
 
-  }
+// keep enabled for a period
+sleep(250000);
 
-};
-
-async.series(actions, function(err, results) {
-
-  if (err) {
-    return console.log(err);
-  }
-
-  return console.log(results);
-
-});
-
+// Disable the modulator
+wpi.digitalWrite(22, 0)
