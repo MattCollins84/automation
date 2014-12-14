@@ -36,11 +36,25 @@ gpio.open(16, "input", function(err) {
 
             console.log("write", err);
 
-            gpio.close(16);
+            gpio.setDirection(16, "input", function(err) {
+
+              console.log("setDirection", err);
+
+              gpio.read(16, function(err, value) {
+
+                console.log("read", value);
+
+                gpio.close(16);
+
+              });
+
+            })
 
           });
 
         })
+
+
 
       });
 
