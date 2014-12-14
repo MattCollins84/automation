@@ -7,6 +7,10 @@ var argv = require('optimist').argv
 var pin = argv.pin;
 var bcm = (argv.bcm=="true"?true:false);
 
+console.log("PIN", pin);
+console.log("BCM", bcm);
+console.log("VAL", value);
+
 if (bcm) {
   gpio.setMode(gpio.MODE_BCM);
 } else {
