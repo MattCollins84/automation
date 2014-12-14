@@ -1,74 +1,46 @@
-var gpio = require('rpi-gpio');
-//gpio.setMode(gpio.MODE_BCM);
+var pins = require('./pins.js');
 
 var async = require('async');
 var argv = require('optimist').argv
 
-var pins = [11, 15, 16, 13, 22, 18];
-var actions = {};
-var power = true; // (argv.power?true:false);
+// var pins = [11, 15, 16, 13, 22, 18];
 
-var delayedWrite = function(pin, value, callback) {
-    setTimeout(function() {
-        gpio.write(pin, value, callback);
-    }, 500);
-}
+var actions = {
 
-for (var p in pins) {
+  write: function(callback) {
 
-  (function(pin) {
+    var opts = [
+      {
+        pin: 11,
+        value: true
+      }
+    ]
 
-    actions[pin] = function(callback) {
+    pins.write(opts, function(err, data) {
+      return callback(err, data);
+    });
 
-      gpio.setup(pin, gpio.DIR_OUT, function(err) {
-        
-        if (err) {
-          return callback({ "action": "setup", err: err, pin: pin});
-        }
+  },
 
-        return callback(null, true);
+  read: function(callback) {
 
-      });
+    var opts = [11];
 
-    };
+    pins.read(opts, function(err, data) {
+      return callback(err, data);
+    });
 
-  })(pins[p]);
+  }
 
-}
+};
 
 async.series(actions, function(err, results) {
 
   if (err) {
-    console.log(err);
-    process.exit(0);
+    return console.log(err);
   }
 
-  var writes = {}
-
-  for (var r in results) {
-
-    if (r == 18) {
-      continue;
-    }
-
-    (function(pin) {
-
-      writes[pin] = function(callback) {
-        
-        delayedWrite(pin, false, function(err, data) {
-          return callback(err, data);
-        });
-
-      }
-
-    })(r);
-
-  }
-
-  async.series(writes, function(err2, results2) {
-
-    console.log(err2, results2);
-
-  });
+  return console.log(results);
 
 });
+
