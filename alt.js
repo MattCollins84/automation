@@ -18,6 +18,20 @@ gpio.open(16, "output", function(err) {
     
     console.log(16, direction);
 
+    gpio.write(16, "1", function(err) {
+      
+      console.log(16, err);
+
+      gpio.read(16, function(err, value) {
+        
+        console.log(16, value);
+
+        gpio.close(16);
+
+      });
+
+    });
+
   });
 
 });
