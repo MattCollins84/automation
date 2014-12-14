@@ -6,6 +6,7 @@ var argv = require('optimist').argv
 
 var pin = argv.pin;
 var bcm = (argv.bcm?true:false);
+var value = argv.value;
 
 if (bcm) {
   gpio.setMode(gpio.MODE_BCM);
@@ -18,10 +19,10 @@ if (!pin) {
   process.exit(0);
 }
 
-gpio.setup(pin, gpio.DIR_IN, function(err) {
-  console.log('setup in', err)
-  gpio.read(pin, function(err, data) {
-    console.log('read', err, data);
+gpio.setup(pin, gpio.DIR_OUT, function(err) {
+  console.log('setup out', err)
+  gpio.write(pin, value, function(err, data) {
+    console.log('write', err, data);
     process.exit(0);
   });
 });
