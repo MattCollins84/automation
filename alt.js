@@ -14,23 +14,31 @@ var pin = argv.pin;
 
 gpio.open(16, "input", function(err) {
   
+  console.log("input", err)
+
   gpio.getDirection(16, function(err, direction) {
     
-    console.log(16, direction);
-
-    //gpio.write(16, "1", function(err) {
-      
-      //console.log(16, err);
+    console.log("getDirection", direction);
 
       gpio.read(16, function(err, value) {
         
-        console.log(16, value);
+        console.log("read", err, value);
 
-        gpio.close(16);
+        gpio.setDirection(16, "output", function(err) {
+
+          console.log("setDirection", err);
+
+          gpio.write(16, "1", function(err) {
+
+            console.log("write", err);
+
+            gpio.close(16);
+
+          });
+
+        })
 
       });
-
-    //});
 
   });
 
