@@ -5,7 +5,7 @@ var async = require('async');
 var argv = require('optimist').argv
 
 var pin = argv.pin;
-var bcm = (argv.bcm?true:false);
+var bcm = (argv.bcm=="true"?true:false);
 
 if (bcm) {
   gpio.setMode(gpio.MODE_BCM);
