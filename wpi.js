@@ -4,11 +4,15 @@ wpi.wiringPiSetup();
 
 // read the value
 wpi.pinMode(16, wpi.modes.INPUT);
-console.log(wpi.digitalRead(16));
+var val = wpi.digitalRead(16);
+console.log(val);
+
+var new_val = (1 - val);
 
 // write the value
 wpi.pinMode(16, wpi.modes.OUTPUT);
-wpi.digitalWrite(16);
+console.log('writing '+new_val)
+wpi.digitalWrite(16, new_val);
 
 // read the value
 wpi.pinMode(16, wpi.modes.INPUT);
