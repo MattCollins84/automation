@@ -11,6 +11,18 @@
       "parameters": {
         
       }
+    },
+    {
+      "title": "Socket 1 - off",
+      "description": "Turn off socket 1",
+      "section": "General API Calls",
+      "endpoint": "/socket1/off",
+      "method": "get",
+      "library": "sockets.js",
+      "callback": "oneOff",
+      "parameters": {
+        
+      }
     }
   ]
 }
