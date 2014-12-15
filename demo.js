@@ -1,7 +1,10 @@
 var wpi = require('wiring-pi');
 var sleep = require('sleep').usleep;
 
-wpi.wiringPiSetupSys();
+wpi.wiringPiSetupPhys();
+
+// setup
+console.log("setup");
 
 // Select the GPIO pins used for the encoder K0-K3 data inputs
 wpi.pinMode(11, wpi.modes.OUTPUT)
@@ -28,6 +31,9 @@ wpi.digitalWrite(15, 0)
 wpi.digitalWrite(16, 0)
 wpi.digitalWrite(13, 0)
 
+// pause
+sleep(2000000);
+console.log("turn on");
 wpi.digitalWrite(11, 1)
 wpi.digitalWrite(15, 1)
 wpi.digitalWrite(16, 1)
