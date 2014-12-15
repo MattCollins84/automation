@@ -48,4 +48,20 @@ GPIO.output (22, False)
 
 time.sleep(2)
 
+GPIO.output (11, True)
+GPIO.output (15, True)
+GPIO.output (16, True)
+GPIO.output (13, False)
+
+# let it settle, encoder requires this
+time.sleep(0.1) 
+# Enable the modulator
+GPIO.output (22, True)
+# keep enabled for a period
+time.sleep(0.25)
+# Disable the modulator
+GPIO.output (22, False)
+
+time.sleep(2)
+
 GPIO.cleanup()
