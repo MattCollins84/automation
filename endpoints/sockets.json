@@ -1,0 +1,16 @@
+{
+  "routes": [
+    {
+      "title": "Socket 1 - on",
+      "description": "Turn on socket 1",
+      "section": "General API Calls",
+      "endpoint": "/socket1/on",
+      "method": "get",
+      "library": "sockets.js",
+      "callback": "oneOn",
+      "parameters": {
+        
+      }
+    }
+  ]
+}
