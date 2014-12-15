@@ -16,7 +16,7 @@ var oneOff = function(qs, callback) {
 
 }
 
-moduoe.exports = {
+module.exports = {
   oneOn: oneOn,
   oneOff: oneOff
 }
